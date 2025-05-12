@@ -1,0 +1,57 @@
+<!-- 
+Add page1.html, page2.html, style.css, and script.js to CS355 folder
+
+include text and images on page1.html, make it look nice with CSS
+
+add form with some inputs, Reset/Submit buttons to page1.html
+
+the Submit action should go to page2.html
+
+page2.html should display whatever input values were collected on page1.html
+
+use new URLSearchParams(location.search) to parse submission
+
+use css flexbox or grid to display key-val pairs one per row
+
+each page should have a semi-transparent clickable dark-mode toggle in the bottom-right corner
+
+when this is clicked, the website (both page1.html and page2.html) changes between light-mode and dark-mode
+
+use localStorage to save whether site is dark-mode, and load the setting from localStorage when a page loads
+
+test to make sure when you reload the site, the last darkmode/lightmode setting remains
+
+Test locally, commit, push to github, test on github, submit link to page1.html on the github.io website (NOT the localhost website)
+
+submission below should look something like:  https://yourUsername.github.io/cs355/page1.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page- 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Registration Form</h1>
+        <form id="userForm" action="page2.html" method="GET">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="FavoriteBeach">Favorite Beach</label>
+            <textarea id="FavoriteBeach" name="Favorite_Beach" required></textarea>
+
+            <div class="buttons">
+                <button type="reset">Reset</button>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+    <button id="darkModeToggle">🌙</button>
+</body>
+<script src="script.js"></script>
+</html>
